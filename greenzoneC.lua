@@ -12,7 +12,7 @@ end)
 
 function cancelEventEvent () cancelEvent() end 
 
---liedje in piratenschip
+-- Music in piratenschip
 pirShipMusicCol = createColCuboid (1997.58,1523.16,8,6,17.66,4)
 addEventHandler ("onClientColShapeHit", getRootElement(), 
 function(hitElement, matchingDimension)

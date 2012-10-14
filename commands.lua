@@ -11,7 +11,7 @@ function nogoto (thePlayer, command, endis)
     end
   end
 end
-addCommandHandler ("nogoto", nogoto)
+--addCommandHandler ("nogoto", nogoto)
 
 function killcommand (thePlayer, command)
 	killPed (thePlayer)
@@ -50,12 +50,12 @@ function gotocommand (thePlayer, command, warpPlayer)
     end
   end
 end
-addCommandHandler ("goto", gotocommand)
+--addCommandHandler ("goto", gotocommand)
 
 function commandscommand (thePlayer, command)
 	outputChatBox ("#FF0000Commands:", thePlayer, 255, 0, 0, true)
 	outputChatBox ("#FFFFFF/kill /suicide - kill youself!", thePlayer, 255, 0, 0, true)
-	outputChatBox ("#FFFFFF/goto [name to warp] - Warp anyone!", thePlayer, 255, 0, 0, true)
+	--outputChatBox ("#FFFFFF/goto [name to warp] - Warp anyone!", thePlayer, 255, 0, 0, true)
 	outputChatBox ("#FFFFFF/flip - flips your car", thePlayer, 255, 0, 0, true)
 end
 addCommandHandler("commands", commandscommand)

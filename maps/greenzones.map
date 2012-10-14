@@ -1,6 +1,6 @@
 <map>
-  <radararea posX="1855.61" posY="1430.09" sizeX="202.16" sizeY="195.13" color="#00FF007F" dimension="0" />
-  <radararea posX="1895.53" posY="2123.24" sizeX="88.76" sizeY="84.58" color="#00FF007F" dimension="0" />
-  <radararea posX="1950.64" posY="2033.14" sizeX="46.46" sizeY="29.75" color="#00FF007F" dimension="0" />
-  <radararea posX="1577.65" posY="1723.59" sizeX="59.46" sizeY="139.45" color="#00FF007F" dimension="0" />
+	<radararea posX="1855.61" posY="1430.09" sizeX="202.16" sizeY="195.13" color="#00FF007F" dimension="0" />
+	<radararea posX="1895.53" posY="2123.24" sizeX="88.76" sizeY="84.58" color="#00FF007F" dimension="0" />
+	<radararea posX="1950.64" posY="2033.14" sizeX="46.46" sizeY="29.75" color="#00FF007F" dimension="0" />
+	<radararea posX="1577.65" posY="1723.59" sizeX="59.46" sizeY="139.45" color="#00FF007F" dimension="0" />
 </map>
