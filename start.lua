@@ -55,8 +55,8 @@ function onQuit (quitType, reason, responsibleElement)
       setAccountData (account, "funmodev2-int", getElementInterior (source))
       setAccountData (account, "funmodev2-dim", getElementDimension (source))
       setAccountData (account, "funmodev2-wantedlevel", getPlayerWantedLevel (source))
-      setAccountData (account, "funmodev2-wantedID", getPlayerWeapon (source))
-      setAccountData (account, "funmodev2-wantedAmmo", getPlayerTotalAmmo (source))
+      setAccountData (account, "funmodev2-wantedID", getPedWeapon (source))
+      setAccountData (account, "funmodev2-wantedAmmo", getPedTotalAmmo (source))
     end
   end
 end
