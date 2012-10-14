@@ -64,8 +64,8 @@ addEventHandler ("onPlayerQuit", getRootElement(), onQuit)
 
 function onWasted(totalAmmo, killer, killerWeapon, bodypart, stealth)
   if not( isGuestAccount (getPlayerAccount(source)) ) then
-    local theWeapon = getPlayerWeapon (source)
-    local weaponAmmo = getPlayerTotalAmmo (source)
+    local theWeapon = getPedWeapon (source)
+    local weaponAmmo = getPedTotalAmmo (source)
     fadeCamera (source, false)
     setTimer (spawnPlayer, 1000, 1, source, 1607.35, 1816.54, 10.82, 0, getPedSkin (source), 0, 0, spawnTeam)
     setTimer (setPlayerTeam, 1500, 1, source, spawnTeam)
