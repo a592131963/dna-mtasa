@@ -2,7 +2,7 @@
 	<info author="JasperNL=D" version="2.01a" type="gamemode" />
 
 	<!-- General -->
-	<script src="login_serv.lua" />
+	<script src="loginS.lua" />
 
 	<script src="minimission/hay/Hay.lua" />
 	<script src="minimission/hay/haygreen.lua" />
@@ -20,33 +20,33 @@
 	<script src="greenzone.lua" type="server" />
 	<script src="joinquit.lua" type="server" />
 
-	<script src="cars/carshopGUIser.lua" type="server" />
-	<script src="cars/carfautures.lua" type="server" />
+	<script src="cars/carShopS.lua" type="server" />
+	<script src="cars/carFeaturesS.lua" type="server" />
 
 	<script src="minimission/kickstart/server.lua" type="server" />
 	<script src="minimission/police/server.lua" type="server" />
 
-	<script src="infoGUI/costumInfoWindowS.lua" type="server" />
+	<script src="infoGUI/server.lua" type="server" />
 
 	<!-- Client -->
 	<config src="help.xml" type="client"/>
 
 	<script src="greenzoneC.lua" type="client" />
 	<script src="unsortedC.lua" type="client" />
-	<script src="gui.lua" type="client" />
-	<script src="login.lua" type="client" />
+	<script src="guiC.lua" type="client" />
+	<script src="loginC.lua" type="client" />
 
-	<script src="cars/carshopGUI.lnk" type="client" />
+	<script src="cars/carShopC.lnk" type="client" />
 
 	<script src="minimission/hay/Hay_client.lua" type="client"/>
 
-	<script src="infoGUI/costumInfoWindowGUI.lnk" type="client" />
+	<script src="infoGUI/client.lnk" type="client" />
 
 	<!-- Maps -->
 	<map src="minimission/kickstart/kickstart.map" dimension="10" />
 	<map src="minimission/police/jail.map" dimension="0" />
-	
-	<map src="mapjes/greenzones.map" dimension="0" />
+
+	<map src="maps/greenzones.map" dimension="0" />
 
 	<!-- Settings -->
 	<settings>
