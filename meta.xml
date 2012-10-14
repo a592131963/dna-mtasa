@@ -4,8 +4,8 @@
 	<!-- General -->
 	<script src="loginS.lua" />
 
-	<script src="minimission/hay/Hay.lua" />
-	<script src="minimission/hay/haygreen.lua" />
+	<!--<script src="minimission/hay/Hay.lua" />
+	<script src="minimission/hay/haygreen.lua" />-->
 
 	<!-- Server -->
 	<script src="start.lua" type="server" />
@@ -23,7 +23,7 @@
 	<script src="cars/carShopS.lua" type="server" />
 	<script src="cars/carFeaturesS.lua" type="server" />
 
-	<script src="minimission/kickstart/server.lua" type="server" />
+	<!--<script src="minimission/kickstart/server.lua" type="server" />-->
 	<script src="minimission/police/server.lua" type="server" />
 
 	<script src="infoGUI/server.lua" type="server" />
@@ -38,12 +38,12 @@
 
 	<script src="cars/carShopC.lnk" type="client" />
 
-	<script src="minimission/hay/Hay_client.lua" type="client"/>
+	<!--<script src="minimission/hay/Hay_client.lua" type="client"/>-->
 
 	<script src="infoGUI/client.lnk" type="client" />
 
 	<!-- Maps -->
-	<map src="minimission/kickstart/kickstart.map" dimension="10" />
+	<!--<map src="minimission/kickstart/kickstart.map" dimension="10" />-->
 	<map src="minimission/police/jail.map" dimension="0" />
 
 	<map src="maps/greenzones.map" dimension="0" />
