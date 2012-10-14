@@ -33,6 +33,7 @@
 	<script src="unsortedC.lua" type="client" />
 	<script src="guiC.lua" type="client" />
 	<script src="loginC.lua" type="client" />
+    <script src="ramp.lua" type="client" />
 
 	<script src="cars/carShopC.lnk" type="client" />
 
@@ -48,6 +49,6 @@
 	<!-- Settings -->
 	<settings>
 		<setting name="*allow_register" value="true" />
-		<setting name="*email_on_register" value="true" />
+		<setting name="*email_on_register" value="false" />
 	</settings>
 </meta>
