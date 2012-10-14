@@ -1,0 +1,31 @@
+<meta>
+	<info author="JasperNL=D" version="2.0" type="gamemode" />
+	<config src="help.xml" type="client"/>
+  <script src="minimission/kickstart/server.lua" type="server" />
+  <map src="minimission/kickstart/kickstart.map" dimension="10" />
+  <script src="minimission/hay/Hay.lua" />
+  <script src="minimission/hay/Hay_client.lua" type="client"/>
+  <script src="minimission/hay/haygreen.lua" />
+  <script src="minimission/police/server.lua" type="server" />
+  <map src="minimission/police/jail.map" dimension="0" />
+	<script src="start.lua" type="server" />
+	<script src="unsorted.lua" type="server" />
+	<script src="clothesshop.lua" type="server" />
+	<script src="ammuhospital.lua" type="server" />
+	<script src="warpmarkers.lua" type="server" />
+	<script src="commands.lua" type="server" />
+	<script src="guiS.lua" type="server" />
+	<script src="cars/carshopGUIser.lua" type="server" />
+	<script src="cars/carfautures.lua" type="server" />
+	<script src="bank.lua" type="server" />
+	<script src="deathpickups.lua" type="server" />
+	<script src="joinquit.lua" type="server" />
+	<script src="greenzone.lua" type="server" />
+	<script src="greenzoneC.lua" type="client" />
+	<map src="mapjes/greenzones.map" dimension="0" />
+	<script src="unsortedC.lua" type="client" />
+  <script src="gui.lua" type="client" />
+  <script src="cars/carshopGUI.lnk" type="client" />
+  <script src="infoGUI/costumInfoWindowGUI.lnk" type="client" />
+  <script src="infoGUI/costumInfoWindowS.lua" type="server" />
+</meta>

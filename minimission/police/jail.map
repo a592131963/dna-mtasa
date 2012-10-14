@@ -1,0 +1,5 @@
+<map edf:definitions="editor_main">
+    <object id="object (des_ltraintunnel2) (2)" model="16024" interior="0" dimension="0" posX="2300.1533203125" posY="2461.2568359375" posZ="-39.18822479248" rotX="0" rotY="0" rotZ="69.880035400391" />
+    <object id="object (des_ltraintunnel2) (3)" model="16024" interior="0" dimension="0" posX="2311.1140136719" posY="2453.6008300781" posZ="-39.18822479248" rotX="0" rotY="0" rotZ="330.08538818359" />
+    <blip posX="2252.75" posY="2491.309" posZ="10.99" icon="30" />
+</map>
