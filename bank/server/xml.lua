@@ -15,7 +15,7 @@ banksInfo = { }
 
 function bankInit( )
 	local useATMs = get( "useATMs" )
-	local xml_root = xmlLoadFile( "locations.xml" )
+	local xml_root = xmlLoadFile( "bank/locations.xml" )
 	local banks = 0
 	while( xmlFindChild( xml_root, "bank", banks ) ) do
 		local markerSize
