@@ -117,7 +117,7 @@ function workOutRamps()
 		returnedData[8] = rotY
 		returnedData[9] = rotZ
 		local thisRamp = spawnRamp ( gMe, returnedData[1], returnedData[2], returnedData[3], returnedData[7], returnedData[8], returnedData[9], 1632 )
-		local rx, ry, rz = getObjectRotation ( thisRamp )
+		local rx, ry, rz = getElementRotation ( thisRamp )
 		spawnRamp ( gMe, returnedData[4], returnedData[5], returnedData[6], rx + 22, returnedData[8], returnedData[9], 1632  )
 		triggerServerEvent ( "vehicleramps_PlayerSpawnedRamp", getLocalPlayer(), mode, returnedData )
 	end

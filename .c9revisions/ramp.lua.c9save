@@ -2,3 +2,4 @@
 {"contributors":[],"silentsave":false,"ts":1350293474200,"patch":[[{"diffs":[[0,"rx, ry, rz = get"],[-1,"Objec"],[1,"Elemen"],[0,"tRotation ( this"]],"start1":1828,"start2":1828,"length1":37,"length2":38}]],"length":7005,"saved":false}
 {"ts":1350293491673,"patch":[[{"diffs":[[0,"e = getP"],[-1,"layer"],[1,"ed"],[0,"Occupied"]],"start1":3032,"start2":3032,"length1":21,"length2":18}]],"length":7002,"saved":false}
 {"ts":1350293510481,"patch":[[{"diffs":[[0,"tZ = get"],[-1,"Vehicle"],[1,"Element"],[0,"Rotation"]],"start1":3645,"start2":3645,"length1":23,"length2":23}]],"length":7002,"saved":false}
+{"ts":1350293909207,"patch":[[{"diffs":[[0,"rz = get"],[-1,"Objec"],[1,"Elemen"],[0,"tRotatio"]],"start1":4712,"start2":4712,"length1":21,"length2":22}]],"length":7003,"saved":false}
