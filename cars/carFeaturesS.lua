@@ -1,9 +1,9 @@
 --Car 4 all:D
 function playerLoginGiveCar (thePreviousAccount, theCurrentAccount, autoLogin)
   if  not (isGuestAccount (theCurrentAccount)) then
-    local accountData = getAccountData (theCurrentAccount, "funmodev2-car")
+    local accountData = getAccountData (theCurrentAccount, "rpg-car")
     if not (accountData) then
-      carID = setAccountData (theCurrentAccount, "funmodev2-car", 481)
+      carID = setAccountData (theCurrentAccount, "rpg-car", 481)
     end
   end
 end

@@ -25,8 +25,7 @@ function animationMenuShow ()
 	if (visableornot == true) then
 		guiSetVisible (AnimationWindow, false)
 		showCursor (false)
-	end
-	if (visableornot == false) then
+	else
 		guiSetVisible (AnimationWindow, true)
 		showCursor (true)
 	end

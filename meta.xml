@@ -15,10 +15,11 @@
 
 	<script src="cars/carShopS.lua" type="server" />
 	<script src="cars/carFeaturesS.lua" type="server" />
-	<script src="minimission/police/server.lua" type="server" />
+	<script src="miniMission/police/server.lua" type="server" />
 	<script src="infoGUI/server.lua" type="server" />
-	<script src="realHour/server.lua" type="server" />
 	<script src="login/server.lua" type="server" />
+	<script src="misc/animation/server.lua" type="server" />
+	<script src="misc/realHour/server.lua" type="server" />
 	<script src="bank/server/events.lua" />
 	<script src="bank/server/funcs.lua" />
 	<script src="bank/server/script.lua" />
@@ -38,7 +39,8 @@
 
 	<script src="cars/carShopC.lnk" type="client" />
 	<script src="infoGUI/client.lnk" type="client" />
-	<script src="realHour/client.lua" type="client" />
+	<script src="misc/realHour/client.lua" type="client" />
+	<script src="misc/animation/client.lua" type="client" />
 	<script src="bank/client/gui.lua" type="client" />
 	<script src="bank/client/blips.lua" type="client" />
 	<script src="bank/client/collision.lua" type="client" />

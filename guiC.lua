@@ -23,7 +23,7 @@ carshopBut = guiCreateButton(0.0604,0.7455,0.8792,0.1,"Bank $50",true,theWindow)
 clothBut = guiCreateButton(0.0604,0.8545,0.8792,0.1,"Clothesshop $50",true,theWindow)
 
 function resourceStart ()
-  bindKey ("m", "down", menuShow)
+	bindKey ("m", "down", menuShow)
 end
 addEventHandler ("onClientResourceStart", getRootElement(), resourceStart)
 
@@ -49,22 +49,22 @@ addEvent ("taxiCar", true)
 addEvent ("taxiCloth", true)
 
 function guiClick (button, state, absoluteX, absoluteY)
-  if (source == spawnBut) then
-    triggerServerEvent ("carSpawn", getLocalPlayer())
-  elseif (source == destroyBut) then
-    triggerServerEvent ("carDestroy", getLocalPlayer())
-  elseif (source == fixBut) then
-    triggerServerEvent ("carFix", getLocalPlayer())
-  elseif (source == flipBut) then
-    triggerServerEvent ("carFlip", getLocalPlayer())
-  elseif (source == pirshipBut) then 
-    triggerServerEvent ("taxiShip", getLocalPlayer())
-  elseif (source == ammuBut) then
-    triggerServerEvent ("taxiAmmu", getLocalPlayer())
-  elseif (source == carshopBut) then
-    triggerServerEvent ("taxiCar", getLocalPlayer())
-  elseif (source == clothBut) then
-    triggerServerEvent ("taxiCloth", getLocalPlayer())
-  end
+	if (source == spawnBut) then
+		triggerServerEvent ("carSpawn", getLocalPlayer())
+	elseif (source == destroyBut) then
+		triggerServerEvent ("carDestroy", getLocalPlayer())
+	elseif (source == fixBut) then
+		triggerServerEvent ("carFix", getLocalPlayer())
+	elseif (source == flipBut) then
+		triggerServerEvent ("carFlip", getLocalPlayer())
+	elseif (source == pirshipBut) then 
+		triggerServerEvent ("taxiShip", getLocalPlayer())
+	elseif (source == ammuBut) then
+		triggerServerEvent ("taxiAmmu", getLocalPlayer())
+	elseif (source == carshopBut) then
+		triggerServerEvent ("taxiCar", getLocalPlayer())
+	elseif (source == clothBut) then
+		triggerServerEvent ("taxiCloth", getLocalPlayer())
+	end
 end
 addEventHandler ("onClientGUIClick", getRootElement(), guiClick)
