@@ -34,19 +34,19 @@
 	<script src="greenzoneC.lua" type="client" />
 	<script src="unsortedC.lua" type="client" />
 	<script src="guiC.lua" type="client" />
-	<script src="login/client.lua" type="client" />
 	<script src="ramp.lua" type="client" />
 
 	<script src="cars/carShopC.lnk" type="client" />
 	<script src="infoGUI/client.lnk" type="client" />
 	<script src="misc/realHour/client.lua" type="client" />
 	<script src="misc/animation/client.lua" type="client" />
+	<script src="login/client.lua" type="client" />
 	<script src="bank/client/gui.lua" type="client" />
 	<script src="bank/client/blips.lua" type="client" />
 	<script src="bank/client/collision.lua" type="client" />
 
 	<!-- Maps -->
-	<map src="minimission/police/jail.map" dimension="0" />
+	<map src="miniMission/police/jail.map" dimension="0" />
 	<map src="maps/greenzones.map" dimension="0" />
 
 	<!-- Settings -->
