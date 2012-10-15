@@ -66,6 +66,7 @@ function autologinPlayer(username,password)
 			triggerClientEvent ( source, "hideLoginWindow", getRootElement())
 		else
 			outputChatBox ("#FF0000* #FFFFFFAuto-login error - Username & password do not match",source,255,255,255,true)
+		end
 	end
 end
 

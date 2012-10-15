@@ -35,7 +35,7 @@ addEventHandler ( "vehicleramps_SpawnRamp", gRoot,
 		elseif ( mode == "3" ) then
 			if ( #returnedData == 9 ) then
 				local thisRamp = spawnRamp ( source, returnedData[1], returnedData[2], returnedData[3], returnedData[7], returnedData[8], returnedData[9], 1632 )
-				local rx, ry, rz = getObjectRotation ( thisRamp )
+				local rx, ry, rz = getElementRotation ( thisRamp )
 				spawnRamp ( source, returnedData[4], returnedData[5], returnedData[6], rx + 22, returnedData[8], returnedData[9], 1632  )
 			end
 		elseif ( mode == "5" ) then
@@ -66,7 +66,7 @@ addEventHandler ( "onClientResourceStart", gResourceRoot, function(name)
 end)
 
 function workOutRamps()
-	local playerVehicle = getPlayerOccupiedVehicle(getLocalPlayer())
+	local playerVehicle = getPedOccupiedVehicle(getLocalPlayer())
 	if ( playerVehicle ) then
 		local PV = getVehicleController(playerVehicle)
 		if ( PV ~= getLocalPlayer() ) then
@@ -86,7 +86,7 @@ function workOutRamps()
 		local distance = 20
 		local returnedData = {}
 		local vehX, vehY, vZ = getElementPosition(playerVehicle)
-		local rotX, rotY, rotZ = getVehicleRotation(playerVehicle)
+		local rotX, rotY, rotZ = getElementRotation(playerVehicle)
 	
 		local ramp1X, ramp1Y = vehX + distance*math.cos(math.rad(rotZ+90)), vehY + distance*math.sin(math.rad(rotZ+90))
 		local ramp2X, ramp2Y = vehX + (distance+5)*math.cos(math.rad(rotZ+90)), vehY + (distance+5)*math.sin(math.rad(rotZ+90))
