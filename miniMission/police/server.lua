@@ -65,8 +65,10 @@ function(attacker, weapon, bodypart, loss)
 		if (getPlayerWantedLevel (source) == 0) then
 			outputChatBox ("This one isn't wanted!", attacker, 0, 0, 255, false)
 		else
-			outputChatBox ("He is jailed "..getPlayerWantedLevel (source).." minute!", attacker, 0, 0, 255, false)
-			outputChatBox ("You are jailed "..getPlayerWantedLevel (source).." munute!", source, 0, 0, 255, false)
+			-- outputChatBox ("He is jailed for "..getPlayerWantedLevel (source).." minutes!", attacker, 0, 0, 255, false)
+			-- outputChatBox ("You are jailed "..getPlayerWantedLevel (source).." minutes!", source, 0, 0, 255, false)
+			outputChatBox ("You cought "..getPlayerName (source).." minutes!", attacker, 0, 0, 255, false)
+			outputChatBox ("You have been caught by "..getPlayerName (attacker).." minutes!", source, 0, 0, 255, false)
 			givePlayerMoney (attacker, getPlayerWantedLevel (source) * 1000)
 			setElementPosition (source, 2304.88, 2451.79, -40.50)
 			--setTimer (setElementPosition,  getPlayerWantedLevel (source) * 60000, 1, source, 2288.34, 2428.84, 10.82)

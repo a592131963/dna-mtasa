@@ -108,6 +108,7 @@ function carFlip ()
 	end
 end
 addEventHandler ("carFlip", getRootElement(), carFlip)
+
 function taxiShip ()
 	if (not isPedInVehicle (source)) and (getElementInterior (source) == 0) then
 		if ( getPlayerMoney( source ) >= 25 ) then
@@ -121,6 +122,7 @@ function taxiShip ()
 	end
 end
 addEventHandler ("taxiShip", getRootElement(), taxiShip)
+
 function taxiAmmu ()
 	if (not isPedInVehicle (source)) and (getElementInterior (source) == 0) then
 		if ( getPlayerMoney( source ) >= 50 ) then
@@ -134,6 +136,7 @@ function taxiAmmu ()
 	end
 end
 addEventHandler ("taxiAmmu", getRootElement(), taxiAmmu)
+
 function taxiCar ()
 	if (not isPedInVehicle (source)) and (getElementInterior (source) == 0) then
 		if ( getPlayerMoney( source ) >= 50 ) then
@@ -147,6 +150,7 @@ function taxiCar ()
 	end
 end
 addEventHandler ("taxiCar", getRootElement(), taxiCar)
+
 function taxiCloth ()
 	if (not isPedInVehicle (source)) and (getElementInterior (source) == 0) then
 		if ( getPlayerMoney( source ) >= 50 ) then
@@ -161,11 +165,10 @@ function taxiCloth ()
 end
 addEventHandler ("taxiCloth", getRootElement(), taxiCloth)
 
-
 --Data word verwijderd wanneer vehicle explodeert
 addEventHandler ("onVehicleExplode", getRootElement(), 
 function()
-	local theOwner = getAccountName (getPlayerAccount(getPlayerFromName (getElementID (source))))
+	local theOwner = getAccountName(getPlayerAccount(source))
 	if (theOwner) then
 		removeElementData (theOwner, "hisCar")
 	end
@@ -178,7 +181,6 @@ function(quitType, reason, responsibleElement)
 		removeElementData (source, "hisCar")
 	end
 end)
-
 
 -- anti bug on restart
 addEventHandler( "onResourceStop", getResourceRootElement( getThisResource() ),

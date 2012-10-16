@@ -19,7 +19,7 @@ addEventHandler ( "vehicleramps_SpawnRamp", gRoot,
 				local thisRamp = spawnRamp ( source, returnedData[1], returnedData[2], returnedData[3], returnedData[7], returnedData[8], returnedData[9], 1632 )
 				local rx, ry, rz = getElementRotation ( thisRamp )
 				spawnRamp ( source, returnedData[4], returnedData[5], returnedData[6], rx + 22, returnedData[8], returnedData[9], 1632  )
-				setTimer ( destroyElement, 6000, 1, theRamps[source] )
+				setTimer ( destroyElement, 5000, 1, thisRamp )
 				theRamps[source] = false
 		end
 	end

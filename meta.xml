@@ -18,6 +18,7 @@
 	<script src="miniMission/police/server.lua" type="server" />
 	<script src="infoGUI/server.lua" type="server" />
 	<script src="login/server.lua" type="server" />
+	<script src="misc/ramp/server.lua" type="server" />
 	<script src="misc/animation/server.lua" type="server" />
 	<script src="misc/realHour/server.lua" type="server" />
 	<script src="misc/driveby/server.lua" type="server" />
@@ -35,11 +36,11 @@
 	<script src="greenzoneC.lua" type="client" />
 	<script src="unsortedC.lua" type="client" />
 	<script src="guiC.lua" type="client" />
-	<script src="ramp.lua" type="client" />
 
 	<script src="cars/carShopC.lnk" type="client" />
 	<script src="infoGUI/client.lnk" type="client" />
 	<script src="login/client.lua" type="client" />
+	<script src="misc/ramp/client.lua" type="client" />
 	<script src="misc/realHour/client.lua" type="client" />
 	<script src="misc/animation/client.lua" type="client" />
 	<script src="misc/driveby/client.lua" type="client" />
