@@ -54,10 +54,8 @@ function workOutRamps()
 	
 		local ramp1X, ramp1Y = vehX + distance*math.cos(math.rad(rotZ+90)), vehY + distance*math.sin(math.rad(rotZ+90))
 		local ramp2X, ramp2Y = vehX + (distance+5)*math.cos(math.rad(rotZ+90)), vehY + (distance+5)*math.sin(math.rad(rotZ+90))
-		--local ramp1Z = getGroundForCoords(ramp1X, ramp1Y, vZ)
-		--local ramp2Z = getGroundForCoords(ramp1X, ramp1Y, vZ)
-		local ramp1Z = vZ
-		local ramp2Z = vZ
+		local ramp1Z = getGroundForCoords(ramp1X, ramp1Y, vZ)
+		local ramp2Z = getGroundForCoords(ramp1X, ramp1Y, vZ)
 		
 		if ( doneOnce ) then
 			if ( lastx == ramp1X ) then
@@ -101,13 +99,13 @@ function spawnRamp ( player, x, y, z, rx, ry, rz, model )
 	end
 end
 
---addEventHandler ( "onClientVehicleExit", g_Root,
---	function ( player, seat )
---		if ( theRamps[player] ) then
---			destroyElement ( theRamps[player] )
---		end
---	end
---)
+addEventHandler ( "onClientVehicleExit", g_Root,
+	function ( player, seat )
+		if ( theRamps[player] ) then
+			destroyElement ( theRamps[player] )
+		end
+	end
+)
 
 addEventHandler ( "onClientPlayerQuit", g_Root,
 	function ( reason )
