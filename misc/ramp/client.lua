@@ -19,7 +19,7 @@ addEventHandler ( "vehicleramps_SpawnRamp", gRoot,
 				local thisRamp = spawnRamp ( source, returnedData[1], returnedData[2], returnedData[3], returnedData[7], returnedData[8], returnedData[9], 1632 )
 				local rx, ry, rz = getElementRotation ( thisRamp )
 				spawnRamp ( source, returnedData[4], returnedData[5], returnedData[6], rx + 22, returnedData[8], returnedData[9], 1632  )
-				setTimer ( destroyElement, 5000, 1, theRamps[source] )
+				setTimer ( destroyElement, 4000, 1, theRamps[source] )
 				theRamps[source] = false
 		end
 	end
@@ -54,8 +54,10 @@ function workOutRamps()
 	
 		local ramp1X, ramp1Y = vehX + distance*math.cos(math.rad(rotZ+90)), vehY + distance*math.sin(math.rad(rotZ+90))
 		local ramp2X, ramp2Y = vehX + (distance+5)*math.cos(math.rad(rotZ+90)), vehY + (distance+5)*math.sin(math.rad(rotZ+90))
-		local ramp1Z = getGroundForCoords(ramp1X, ramp1Y, vZ)
-		local ramp2Z = getGroundForCoords(ramp1X, ramp1Y, vZ)
+		--local ramp1Z = getGroundForCoords(ramp1X, ramp1Y, vZ)
+		--local ramp2Z = getGroundForCoords(ramp1X, ramp1Y, vZ)
+		local ramp1Z = vZ
+		local ramp2Z = vZ
 		
 		if ( doneOnce ) then
 			if ( lastx == ramp1X ) then
