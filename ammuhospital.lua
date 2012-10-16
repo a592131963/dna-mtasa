@@ -35,7 +35,7 @@ function weaponPayment (playerWhoUses)
 		if (thePlayerMoney > healthMoney+1) then
 			outputChatBox ("press Tab to pickup, 1$/x%.", playerWhoUses, 255, 0, 0, false)
 			bindKey (playerWhoUses, "tab", "down", hospitalHealthPickup, playerWhoUses)
-      setTimer (unbindKey, 1000, 1, playerWhoUses, "tab", "down", hospitalHealthPickup)
+			setTimer (unbindKey, 1000, 1, playerWhoUses, "tab", "down", hospitalHealthPickup)
 		else
 			outputChatBox ("You haven't got enough money to take this!", playerWhoUses, 255, 0, 0, false)
 		end
@@ -46,7 +46,7 @@ function weaponPayment (playerWhoUses)
 		if (thePlayerMoney > healthMoney2+1) then
 			outputChatBox ("press Tab to pickup, 1$/x%.", playerWhoUses, 255, 0, 0, false)
 			bindKey (playerWhoUses, "tab", "down", hospitalHealthPickup, playerWhoUses)
-      setTimer (unbindKey, 1000, 1, playerWhoUses, "tab", "down", hospitalHealthPickup)
+			setTimer (unbindKey, 1000, 1, playerWhoUses, "tab", "down", hospitalHealthPickup)
 		else
 			outputChatBox ("You haven't got enough money to take this!", playerWhoUses, 255, 0, 0, false)
 		end
@@ -57,17 +57,17 @@ function weaponPayment (playerWhoUses)
 			outputChatBox ("press Tab to pickup, 200$/50%.", playerWhoUses, 255, 0, 0, false)
 			bindKey (playerWhoUses, "tab", "down", hospitalArmorPickup, playerWhoUses)
 			function hospitalArmorPickup (thePlayer)
-        if (getPlayerMoney (thePlayer) > 119) then
-          if (getPedArmor (thePlayer) < 100) then
-            takePlayerMoney (thePlayer, 200)
-            setPedArmor (thePlayer, getPedArmor (thePlayer) +50)
-            outputChatBox ("Picked up a armorpickup, you have paid 50$", thePlayer, 255, 0, 0, false)
-          end
-          outputChatBox ("You have too much armor to take this!", thePlayer, 255, 0, 0, false)
-        end
-        outputChatBox ("You haven't got enough money to take this!", thePlayer, 255, 0, 0, false)
-      end
-      setTimer (unbindKey, 1000, 1, playerWhoUses, "tab", "down", hospitalArmorPickup)
+				if (getPlayerMoney (thePlayer) > 119) then
+					if (getPedArmor (thePlayer) < 100) then
+						takePlayerMoney (thePlayer, 200)
+						setPedArmor (thePlayer, getPedArmor (thePlayer) +50)
+						outputChatBox ("Picked up a armorpickup, you have paid 50$", thePlayer, 255, 0, 0, false)
+					end
+					outputChatBox ("You have too much armor to take this!", thePlayer, 255, 0, 0, false)
+				end
+				outputChatBox ("You haven't got enough money to take this!", thePlayer, 255, 0, 0, false)
+			end
+			setTimer (unbindKey, 1000, 1, playerWhoUses, "tab", "down", hospitalArmorPickup)
 		else
 			outputChatBox ("You haven't got enough money to take this!", playerWhoUses, 255, 0, 0, false)
 		end
@@ -76,11 +76,11 @@ end
 addEventHandler ("onPickupUse", getRootElement(), weaponPayment)
 
 function hospitalHealthPickup (thePlayer)
-  if (getPlayerMoney (thePlayer) > healthMoney) then
-    takePlayerMoney (thePlayer, healthMoney)
-    setElementHealth (thePlayer, 100)
-    outputChatBox ("Picked up a healthpickup, you have paid 1$ for each %", thePlayer, 255, 0, 0, false)
-  else
-  outputChatBox ("You haven't got enough money to take this!", thePlayer, 255, 0, 0, false)
-  end
+	if (getPlayerMoney (thePlayer) > healthMoney) then
+		takePlayerMoney (thePlayer, healthMoney)
+		setElementHealth (thePlayer, 100)
+		outputChatBox ("Picked up a healthpickup, you have paid 1$ for each %", thePlayer, 255, 0, 0, false)
+	else
+	outputChatBox ("You haven't got enough money to take this!", thePlayer, 255, 0, 0, false)
+	end
 end

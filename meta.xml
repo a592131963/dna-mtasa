@@ -1,5 +1,5 @@
 <meta>
-	<info author="JasperNL=D" version="2.01a" type="gamemode" />
+	<info author="ttouch" version="2.02a" type="gamemode" />
 
 	<!-- Server -->
 	<script src="start.lua" type="server" />
@@ -20,6 +20,7 @@
 	<script src="login/server.lua" type="server" />
 	<script src="misc/animation/server.lua" type="server" />
 	<script src="misc/realHour/server.lua" type="server" />
+	<script src="misc/driveby/server.lua" type="server" />
 	<script src="bank/server/events.lua" />
 	<script src="bank/server/funcs.lua" />
 	<script src="bank/server/script.lua" />
@@ -38,9 +39,13 @@
 
 	<script src="cars/carShopC.lnk" type="client" />
 	<script src="infoGUI/client.lnk" type="client" />
+	<script src="login/client.lua" type="client" />
 	<script src="misc/realHour/client.lua" type="client" />
 	<script src="misc/animation/client.lua" type="client" />
-	<script src="login/client.lua" type="client" />
+	<script src="misc/driveby/client.lua" type="client" />
+	<script src="misc/driveby/utils/textlib.lua" type="client" />
+	<script src="misc/driveby/utils/client_anim.lua" type="client" />
+	<script src="misc/driveby/utils/textlib_anim.lua" type="client" />
 	<script src="bank/client/gui.lua" type="client" />
 	<script src="bank/client/blips.lua" type="client" />
 	<script src="bank/client/collision.lua" type="client" />
@@ -58,6 +63,15 @@
 		<setting name="@SQLUserNameField" 	value="username" />
 		<setting name="@SQLMoneyField" 	value="balance" /> 
 		-->
+		
+		<!-- Driveby -->
+		<setting name="driveby_driver" value="[[  ]]"></setting>
+		<setting name="driveby_passenger" value="[[ 22,23,24,25,26,28,29,32,30,31,33 ]]"></setting>
+		<setting name="driveby_shot_delay" value="[{ '22':100,'23':100,'24':600,'26':500 }]"></setting>
+		<setting name="driveby_blocked_vehicles" value="[[ 432,601,437,431,592,553,577,488,497,548,563,512,476,447,425,519,520,460,417,469,487,513,441,464,501,465,564,538,449,537,539,570472,473,493,595,484,430,453,452,446,454,606,591,607,611,610,590,569,611,435,608,584,450 ]]"></setting>
+		<setting name="driveby_steer_cars" value="[false]"></setting>
+		<setting name="driveby_steer_bikes" value="[false]"></setting>
+		<setting name="driveby_auto_equip" value="[false]"></setting>
 	</settings>
 	
 	<!-- Media -->

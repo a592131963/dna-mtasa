@@ -34,10 +34,10 @@ function bankInit( )
 		banksInfo[ tempID ].interior = tonumber( xmlNodeGetAttribute( bank_loc, "interior" ) ) or 0;
 		markerSize = tonumber( xmlNodeGetAttribute( bank_loc, "markerSize" ) ) or 2
 		banksInfo[ tempID ].marker = createMarker( 
-													banksInfo[ tempID ].posX,
-													banksInfo[ tempID ].posY,
-													banksInfo[ tempID ].posZ-.9,
-													"cylinder", markerSize, 250, 0, 0, 100 )
+			banksInfo[ tempID ].posX,
+			banksInfo[ tempID ].posY,
+			banksInfo[ tempID ].posZ-.9,
+			"cylinder", markerSize, 250, 0, 0, 100 )
 		setElementInterior( banksInfo[ tempID ].marker, banksInfo[ tempID ].interior );
 		if useATMs and xmlNodeGetAttribute( bank_loc, "ATM" ) == "true" then
 			local rot = tonumber( xmlNodeGetAttribute( bank_loc, "ATMRot" ) ) or 0.0

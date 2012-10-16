@@ -7,10 +7,7 @@ local theRamps = {}
 addEvent ( "vehicleramps_SpawnRamp", true )
 addEventHandler ( "vehicleramps_SpawnRamp", gRoot,
 	function ( mode, returnedData )
-		--outputChatBox ( "A RAMP WAS MADE BY " .. getPlayerName(source) )
-		
 		if ( theRamps[source] ) then
-			--outputChatBox ( "Destroying the ramps table" )
 			destroyElement(theRamps[source])
 			theRamps[source] = false
 		end
@@ -18,51 +15,19 @@ addEventHandler ( "vehicleramps_SpawnRamp", gRoot,
 		local parentUnit = createElement("myRamps" .. getPlayerID(source))
 		theRamps[source] = parentUnit
 		
-		if ( mode == "1" ) then
-			if ( #returnedData == 6 ) then
-				spawnRamp ( source, returnedData[1], returnedData[2], returnedData[3], returnedData[4], returnedData[5], returnedData[6], 1632  )
-			end
-		elseif ( mode == "1s" ) then
-			spawnRamp ( source, returnedData[1], returnedData[2], returnedData[3], 0, 0, 0, 1632  )
-			spawnRamp ( source, returnedData[4], returnedData[5], returnedData[6], 0, 0, 90, 1632  )
-			spawnRamp ( source, returnedData[7], returnedData[8], returnedData[9], 0, 0, 180, 1632  )
-			spawnRamp ( source, returnedData[10], returnedData[11], returnedData[12], 0, 0, 270, 1632  )
-		elseif ( mode == "2" ) then
-			if ( #returnedData == 9 ) then
-				spawnRamp ( source, returnedData[1], returnedData[2], returnedData[3], returnedData[7], returnedData[8], returnedData[9], 1632 )
-				spawnRamp ( source, returnedData[4], returnedData[5], returnedData[6], returnedData[7], returnedData[8], returnedData[9], 1632  )
-			end
-		elseif ( mode == "3" ) then
-			if ( #returnedData == 9 ) then
+		if ( #returnedData == 9 ) then
 				local thisRamp = spawnRamp ( source, returnedData[1], returnedData[2], returnedData[3], returnedData[7], returnedData[8], returnedData[9], 1632 )
 				local rx, ry, rz = getElementRotation ( thisRamp )
 				spawnRamp ( source, returnedData[4], returnedData[5], returnedData[6], rx + 22, returnedData[8], returnedData[9], 1632  )
-			end
-		elseif ( mode == "5" ) then
-			if ( #returnedData == 6 ) then
-				spawnRamp ( source, returnedData[1], returnedData[2], returnedData[3], 0, 0, returnedData[6], 13592  )
-			end
-		elseif ( mode == "6" ) then
-			if ( #returnedData == 6 ) then
-				spawnRamp ( source, returnedData[1], returnedData[2], returnedData[3], 0, 0, returnedData[6], 13641  )
-			end
-		elseif ( mode == "custom" ) then
-			if ( #returnedData == 7 ) then
-				spawnRamp ( source, returnedData[1], returnedData[2], returnedData[3], 0, 0, returnedData[6], returnedData[7]  )
-			end
+				setTimer ( destroyElement, 6000, 1, theRamps[source] )
+				theRamps[source] = false
 		end
 	end
 )
 
 addEventHandler ( "onClientResourceStart", gResourceRoot, function(name)
-	--outputChatBox ( "Client Script Started" )
-		outputChatBox ( "Client Script Started" )
-		--bindKey ( "1", "down", workOutRamps, 1 )
-		--bindKey ( "2", "down", workOutRamps, 2 )
-		bindKey ( "3", "down", workOutRamps )
-		--bindKey ( "5", "down", workOutRamps, 5 )
-		--bindKey ( "6", "down", workOutRamps, 6 )
-
+	outputChatBox ( "Client Script Started" )
+	bindKey ( "3", "down", workOutRamps )
 end)
 
 function workOutRamps()
@@ -75,7 +40,6 @@ function workOutRamps()
 		end 
 
 		if ( theRamps[gMe] ) then
-			--outputChatBox ( "Destroying the ramps table" )
 			destroyElement(theRamps[gMe])
 			theRamps[gMe] = false
 		end
@@ -124,9 +88,7 @@ function workOutRamps()
 end
 
 function spawnRamp ( player, x, y, z, rx, ry, rz, model )
-	--outputDebugString ( "Attempting to create a ramp @ " .. tostring(x) .. " " .. tostring(y) .. " " .. tostring(z) .. " r @ " .. tostring(rx) .. " " .. tostring(ry) .. " " .. tostring(rz) )
 	local dontCreateRamp = checkRampForObstructions(x, y, z)
-	--outputChatBox ( "Ramps Table = " .. tostring(theRamps[player]) )
 	if ( theRamps[player] ) then
 		parentUnit = theRamps[player]
 	end
@@ -137,13 +99,13 @@ function spawnRamp ( player, x, y, z, rx, ry, rz, model )
 	end
 end
 
-addEventHandler ( "onClientVehicleExit", g_Root,
-	function ( player, seat )
-		if ( theRamps[player] ) then
-			destroyElement ( theRamps[player] )
-		end
-	end
-)
+--addEventHandler ( "onClientVehicleExit", g_Root,
+--	function ( player, seat )
+--		if ( theRamps[player] ) then
+--			destroyElement ( theRamps[player] )
+--		end
+--	end
+--)
 
 addEventHandler ( "onClientPlayerQuit", g_Root,
 	function ( reason )
