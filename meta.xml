@@ -43,9 +43,9 @@
 	<script src="misc/realHour/client.lua" type="client" />
 	<script src="misc/animation/client.lua" type="client" />
 	<script src="misc/driveby/client.lua" type="client" />
-	<script src="misc/driveby/utils/textlib.lua" type="client" />
-	<script src="misc/driveby/utils/client_anim.lua" type="client" />
-	<script src="misc/driveby/utils/textlib_anim.lua" type="client" />
+	<script src="misc/driveby/utils/textlibC.lua" type="client" />
+	<script src="misc/driveby/utils/animC.lua" type="client" />
+	<script src="misc/driveby/utils/textlib_animC.lua" type="client" />
 	<script src="bank/client/gui.lua" type="client" />
 	<script src="bank/client/blips.lua" type="client" />
 	<script src="bank/client/collision.lua" type="client" />

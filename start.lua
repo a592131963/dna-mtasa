@@ -23,7 +23,9 @@ function playerLogin (thePreviousAccount, theCurrentAccount, autoLogin)
 			setTimer (setPlayerTeam, 500, 1, source, spawnTeam)
 			setPlayerMoney (source, playerMoney)
 			setTimer (setPlayerWantedLevel, 500, 1, source, playerWanted)
-			setTimer (giveWeapon, 500, 1, source, playerWeaponID, playerWeaponAmmo, true)
+			if playerWeaponID then
+				setTimer (giveWeapon, 500, 1, source, playerWeaponID, playerWeaponAmmo, true)
+			end
 			setCameraTarget (source, source)
 			fadeCamera(source, true, 2.0)
 		else
