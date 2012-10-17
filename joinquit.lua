@@ -9,8 +9,8 @@ addEventHandler('onPlayerLogin', g_Root,
 addEventHandler('onPlayerQuit', g_Root,
 	function(reason)
 		if not (isGuestAccount (getPlayerAccount(source))) then
-      outputChatBox('* ' .. getAccountName (getPlayerAccount(source)) .. ' has left the game [' .. reason .. ']', getRootElement(), 255, 100, 100)
-    end
+			outputChatBox('* ' .. getAccountName (getPlayerAccount(source)) .. ' has left the game [' .. reason .. ']', getRootElement(), 255, 100, 100)
+		end
 	end
 )
 

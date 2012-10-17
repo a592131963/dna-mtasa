@@ -40,6 +40,7 @@
 	<script src="cars/carShopC.lnk" type="client" />
 	<script src="infoGUI/client.lnk" type="client" />
 	<script src="login/client.lua" type="client" />
+	<script src="misc/radio.lua" type="client" />
 	<script src="misc/ramp/client.lua" type="client" />
 	<script src="misc/realHour/client.lua" type="client" />
 	<script src="misc/glue/client.lua" type="client" />

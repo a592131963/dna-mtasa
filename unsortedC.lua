@@ -6,11 +6,11 @@ guiLabelSetVerticalAlign (stuntLabel, "center")
 guiSetFont (stuntLabel, "clear-normal")
 
 addEventHandler( "onClientPlayerStuntFinish", getRootElement(),
-    function (stuntType, stuntTime, distance)
-        if (stuntTime > 1) then
-          local stuntSecTime = stuntTime/1000
-          guiSetText (stuntLabel, "Stunt: " .. stuntType ..", Time: " .. stuntSecTime ..", Distance: " .. tostring( distance ) .. "meter")
-          setTimer (guiSetText, 1500,1, stuntLabel, "")
-        end
-    end
+	function (stuntType, stuntTime, distance)
+		if (stuntTime > 1) then
+			local stuntSecTime = stuntTime/1000
+			guiSetText (stuntLabel, "Stunt: " .. stuntType ..", Time: " .. stuntSecTime ..", Distance: " .. tostring( distance ) .. "meter")
+			setTimer (guiSetText, 1500,1, stuntLabel, "")
+		end
+	end
 );
