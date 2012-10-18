@@ -1,5 +1,5 @@
 
-carshopWindow = guiCreateWindow(12,120,189,218,"Funmode V2 Car Shop",false)
+carshopWindow = guiCreateWindow(12,120,189,218,"DnA Car Shop",false)
 guiSetVisible (carshopWindow, false)
 guiSetAlpha(carshopWindow,1)
 guiWindowSetSizable(carshopWindow,false)
@@ -15,10 +15,10 @@ carColumn = guiGridListAddColumn(carGridList,"Car",0.5)
 costColumn = guiGridListAddColumn(carGridList,"$",0.3)
 local cars = {{579,60000},{400,60000},{404,28000},{489,65000},{505,65000},{479,45000},{442,45000},{458,45000},{602,100000},{496,42500},{401,41000},{518,60000},{527,75000},{589,75000},{419,45000},{533,75000},{526,50000},{474,55000},{545,50000},{517,45000},{410,41000},{600,50000},{436,41000},{580,50000},{439,75000},{549,75000},{491,45000},{445,45000},{507,45000},{585,45000},{587,100000},{466,55000},{492,50000},{546,45000},{551,45000},{516,45000},{467,45000},{426,47500},{547,45000},{405,55000},{409,75000},{550,45000},{566,45000},{540,45000},{421,50000},{529,45000},{402,250000},{542,65000},{603,150000},{475,75000},{562,175000},{565,95000},{559,125000},{561,50000},{560,125000},{558,100000},{429,150000},{541,150000},{415,150000},{480,95000},{434,100000},{494,200000},{502,200000},{503,200000},{411,300000},{506,150000},{451,300000},{555,95000},{477,95000},{499,25000},{498,25000},{578,50000},{486,70000},{406,500000},{573,250000},{455,75000},{588,50000},{403,75000},{423,1000000},{414,50000},{443,75000},{515,75000},{514,75000},{531,12000},{456,45000},{422,45000},{482,95000},{530,12000},{418,45000},{572,12000},{582,50000},{413,50000},{440,50000},{543,65000},{583,12000},{478,35000},{554,50000},{536,75000},{575,75000},{534,75000},{567,75000},{535,75000},{576,75000},{412,75000},{568,75000},{457,12000},{483,45000},{508,40000},{571,10000},{500,55000},{444,250000},{556,250000},{557,250000},{471,20000},{495,100000},{539,75000},{481,2500},{509,2500},{581,45000},{462,12000},{521,60000},{463,50000},{522,75000},{448,12000},{468,45000},{586,45000},{485,12000},{431,60000},{438,45000},{437,60000},{574,12000},{420,45000},{525,75000},{408,50000},{428,65000}}
 for i,v in ipairs (cars) do
-    local carName = getVehicleNameFromModel (v[1])
-    local row = guiGridListAddRow (carGridList)
-    guiGridListSetItemText (carGridList, row, 1, carName, false, true)
-    guiGridListSetItemText (carGridList, row, 2, tostring(v[2]), false, true)
+		local carName = getVehicleNameFromModel (v[1])
+		local row = guiGridListAddRow (carGridList)
+		guiGridListSetItemText (carGridList, row, 1, carName, false, true)
+		guiGridListSetItemText (carGridList, row, 2, tostring(v[2]), false, true)
 end
 guiSetAlpha(carGridList,1)
 buyButton = guiCreateButton(0.0476,0.8624,0.7778,0.0963,"Buy it!",true,carshopWindow)
@@ -28,22 +28,22 @@ closeButton = guiCreateButton(0.8571,0.8624,0.0899,0.1009,"x",true,carshopWindow
 
 addEvent ("viewGUI", true)
 function viewGUI ()
-  if (getLocalPlayer() == source) then
-    guiSetVisible (carshopWindow, true)
-    showCursor (true)
-  end
+	if (getLocalPlayer() == source) then
+		guiSetVisible (carshopWindow, true)
+		showCursor (true)
+	end
 end
 addEventHandler ("viewGUI", getRootElement(), viewGUI)
 
 function onClientGUIClick (button, state, absoluteX, absoluteYe)
-  if (source == buyButton) then guiSetVisible (carshopWindow, false) showCursor (false)
-    if (guiGridListGetSelectedItem (carGridList)) then
-      local carName = guiGridListGetItemText (carGridList, guiGridListGetSelectedItem (carGridList), 1)
-      local carID = getVehicleModelFromName (carName)
-      local carCost = guiGridListGetItemText (carGridList, guiGridListGetSelectedItem (carGridList), 2)
-      triggerServerEvent ("carShopCarBuy", getLocalPlayer(), carID, carCost, carName)
-    end
-  elseif (source == closeButton) then guiSetVisible (carshopWindow, false) showCursor (false)
-  end
+	if (source == buyButton) then guiSetVisible (carshopWindow, false) showCursor (false)
+		if (guiGridListGetSelectedItem (carGridList)) then
+			local carName = guiGridListGetItemText (carGridList, guiGridListGetSelectedItem (carGridList), 1)
+			local carID = getVehicleModelFromName (carName)
+			local carCost = guiGridListGetItemText (carGridList, guiGridListGetSelectedItem (carGridList), 2)
+			triggerServerEvent ("carShopCarBuy", getLocalPlayer(), carID, carCost, carName)
+		end
+	elseif (source == closeButton) then guiSetVisible (carshopWindow, false) showCursor (false)
+	end
 end
 addEventHandler ("onClientGUIClick", getRootElement(), onClientGUIClick)

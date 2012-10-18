@@ -4,7 +4,7 @@ function loginPlayer(username,password,enableKickPlayer,attemptedLogins,maxLogin
 		outputChatBox ("#0000FF* #FFFFFFError! Please fill out all the boxes!",source,255,255,255,true)
 	else
 		local account = getAccount ( username, password )
-		if ( account == true ) then
+		if ( account ~= false ) then
 			logIn (source, account, password)
 			outputChatBox ("#0000FF* #FFFFFFYou have sucessfully logged in!",source,255,255,255,true)
 			setTimer(outputChatBox,700,1,"#0000FF* #FFFFFFTo enable auto-login, use #ABCDEF/enableauto#FFFFFF!",source,255,255,255,true)

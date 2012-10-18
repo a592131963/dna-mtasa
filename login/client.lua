@@ -67,8 +67,8 @@ function loginPanel()
 				guiLabelSetHorizontalAlign(lblPassword,"center",false)
 				guiSetFont(lblPassword,"default-bold-small")
 
-				btnPlayAsGuest = guiCreateButton(548,368,168,74,"Play as guest",false,mainWindow)
-				guiSetFont(btnPlayAsGuest,"default-bold-small")
+				--btnPlayAsGuest = guiCreateButton(548,368,168,74,"Play as guest",false,mainWindow)
+				--guiSetFont(btnPlayAsGuest,"default-bold-small")
 
 				btnLogin = guiCreateButton(280,368,242,74,"Login",false,mainWindow)
 				guiSetFont(btnLogin,"sa-header")
@@ -117,7 +117,7 @@ function loginPanel()
 				btnConfirmRegistration = guiCreateButton(29,292,179,38,"Confirm & register!",false,registerWindow)
 				guiSetFont(btnConfirmRegistration,"default-bold-small")
 
-				guiCreateStaticImage(440,23,300,225,"logo.png",false,mainWindow)
+				guiCreateStaticImage(440,23,300,225,"login/logo.png",false,mainWindow)
 
 				guiSetVisible(mainWindow, true)
 				guiSetVisible(registerWindow, false)

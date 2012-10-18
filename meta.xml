@@ -22,6 +22,7 @@
 	<script src="misc/realHour/server.lua" type="server" />
 	<script src="misc/driveby/server.lua" type="server" />
 	<script src="misc/glue/server.lua" type="server" />
+	<script src="misc/fart/server.lua" type="server" />
 	<script src="bank/server/events.lua" />
 	<script src="bank/server/funcs.lua" />
 	<script src="bank/server/script.lua" />
@@ -44,6 +45,7 @@
 	<script src="misc/ramp/client.lua" type="client" />
 	<script src="misc/realHour/client.lua" type="client" />
 	<script src="misc/glue/client.lua" type="client" />
+	<script src="misc/fart/client.lua" type="client" />
 	<script src="misc/driveby/client.lua" type="client" />
 	<script src="misc/driveby/utils/textlibC.lua" type="client" />
 	<script src="misc/driveby/utils/animC.lua" type="client" />
@@ -79,4 +81,5 @@
 	<!-- Media -->
 	<file src="login/logo.png" />
 	<file src="bank/client/warning.png" />
+	<file src="misc/fart/fart.wav" />
 </meta>
