@@ -2,20 +2,22 @@ stuntLabel = guiCreateLabel (0,0.8,1,0.2,"",true)
 guiLabelSetHorizontalAlign (stuntLabel, "center")
 guiLabelSetVerticalAlign (stuntLabel, "center")
 guiSetFont (stuntLabel, "sa-header")
-
+guiSetAlpha(stuntLabel, 127)
 addEvent("enableGodMode", true)
 addEvent("disableGodMode", true)
 addEventHandler ("enableGodMode", getRootElement(), 
 function()
 	addEventHandler ("onClientPlayerDamage", getRootElement(), cancelEventEvent)
-	guiSetText (stuntLabel, "#00FF007FGreenzone")
+	guiLabelSetColor(stuntLabel, 00, 255, 00)
+	guiSetText (stuntLabel, "Greenzone")
 	setTimer (guiSetText, 3000,1, stuntLabel, "")
 end)
 
 addEventHandler ("disableGodMode", getRootElement(), 
 function()
 	removeEventHandler ("onClientPlayerDamage", getRootElement(), cancelEventEvent)
-	guiSetText (stuntLabel, "#FF00007FReal World")
+	guiLabelSetColor(stuntLabel, 255, 00, 00)
+	guiSetText (stuntLabel, "Real World")
 	setTimer (guiSetText, 3000,1, stuntLabel, "")
 end)
 
