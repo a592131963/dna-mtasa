@@ -46,9 +46,8 @@ end
 
 addEventHandler("onClientResourceStart",getResourceRootElement(),
 function()
-	outputChatBox ("Radio system by JasperNL=D Started,")
 	showPlayerHudComponent ("radio",false)
-	setRadioChannel (0)
+	setRadioChannel (8)
 	
 	bindKey ("radio_next","down",
 		function(key,state)

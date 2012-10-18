@@ -82,37 +82,37 @@ function updateWeatherAdvanced(WeatherOvernight, WeatherToday, WeatherTonight, W
 
 	if (WeatherOvernight ~= nil) then
 			overnightlabel = guiCreateLabel(0.05,0.1,0.3,0.2,"Overnight",true,tabToday)		
-			guiCreateStaticImage(0.05,0.3,0.3,0.3, "img/Night/" .. NightWeatherIcons[WeatherOvernight] .. ".png", true, tabToday)
+			guiCreateStaticImage(0.05,0.3,0.3,0.3, "weather/img/Night/" .. NightWeatherIcons[WeatherOvernight] .. ".png", true, tabToday)
 			overnightdesc = guiCreateLabel(0.05,0.7,0.3,0.2,GetNightWeatherDescription(WeatherOvernight),true,tabToday)
 			guiLabelSetHorizontalAlign(overnightlabel, "center", true)
 			guiLabelSetHorizontalAlign(overnightdesc, "center", true)	
 			
 			todaylabel = guiCreateLabel(0.35,0.1,0.3,0.2,"Today",true,tabToday)		
-			guiCreateStaticImage(0.35,0.3,0.3,0.3, "img/Day/" .. DayWeatherIcons[WeatherToday] .. ".png", true, tabToday)
+			guiCreateStaticImage(0.35,0.3,0.3,0.3, "weather/img/Day/" .. DayWeatherIcons[WeatherToday] .. ".png", true, tabToday)
 			todaydesc = guiCreateLabel(0.35,0.7,0.3,0.2,GetDayWeatherDescription(WeatherToday),true,tabToday)
 			guiLabelSetHorizontalAlign(todaylabel, "center", true)
 			guiLabelSetHorizontalAlign(todaydesc, "center", true)
 
 			tonightlabel = guiCreateLabel(0.65,0.1,0.3,0.2,"Tonight",true,tabToday)		
-			guiCreateStaticImage( 0.65, 0.3, 0.3, 0.3, "img/Night/" .. NightWeatherIcons[WeatherTonight]  .. ".png", true, tabToday)
+			guiCreateStaticImage( 0.65, 0.3, 0.3, 0.3, "weather/img/Night/" .. NightWeatherIcons[WeatherTonight]  .. ".png", true, tabToday)
 			tonightdesc = guiCreateLabel(0.65,0.7,0.3,0.2, GetNightWeatherDescription(WeatherTonight),true,tabToday)		
 
 	else
 		if (WeatherToday ~= nil) then
 			todaylabel = guiCreateLabel(0.05,0.1,0.3,0.2,"Today",true,tabToday)		
-			guiCreateStaticImage( 0.05, 0.3,0.3, 0.3, "img/Day/" .. DayWeatherIcons[WeatherToday] .. ".png", true, tabToday)
+			guiCreateStaticImage( 0.05, 0.3,0.3, 0.3, "weather/img/Day/" .. DayWeatherIcons[WeatherToday] .. ".png", true, tabToday)
 			todaydesc = guiCreateLabel(0.05,0.7,0.3,0.1,GetDayWeatherDescription(WeatherToday),true,tabToday)
 			guiLabelSetHorizontalAlign(todaylabel, "center", true)
 			guiLabelSetHorizontalAlign(todaydesc, "center", true)
 			
 			tonightlabel = guiCreateLabel(0.65,0.1,0.3,0.2,"Tonight",true,tabToday)		
-			guiCreateStaticImage( 0.65, 0.3, 0.3, 0.3, "img/Night/" .. NightWeatherIcons[WeatherTonight]  .. ".png", true, tabToday)
+			guiCreateStaticImage( 0.65, 0.3, 0.3, 0.3, "weather/img/Night/" .. NightWeatherIcons[WeatherTonight]  .. ".png", true, tabToday)
 			tonightdesc = guiCreateLabel(0.65,0.7,0.3,0.2, GetNightWeatherDescription(WeatherTonight),true,tabToday)		
 
 		else
 		-- Only tonight's weather is to be shown, so we'll centre it.
 			tonightlabel = guiCreateLabel(0.35,0.1,0.3,0.2,"Tonight",true,tabToday)		
-			guiCreateStaticImage( 0.35, 0.3, 0.3, 0.3, "img/Night/" .. NightWeatherIcons[WeatherTonight]  .. ".png", true, tabToday)
+			guiCreateStaticImage( 0.35, 0.3, 0.3, 0.3, "weather/img/Night/" .. NightWeatherIcons[WeatherTonight]  .. ".png", true, tabToday)
 			tonightdesc = guiCreateLabel(0.35,0.7,0.3,0.2, GetNightWeatherDescription(WeatherTonight),true,tabToday)		
 
 		end
@@ -127,8 +127,8 @@ function updateWeatherAdvanced(WeatherOvernight, WeatherToday, WeatherTonight, W
 	guiLabelSetHorizontalAlign(tomorrowlabel, "center", true)
 	tomorrownightlabel = guiCreateLabel(0.65,0.1,0.3,0.2,"Night",true,tabTomorrow)		
 	guiLabelSetHorizontalAlign(tomorrownightlabel, "center", true)
-	guiCreateStaticImage( 0.05, 0.3,0.3, 0.3, "img/Day/" .. DayWeatherIcons[WeatherTomorrowDay] .. ".png", true, tabTomorrow)
-	guiCreateStaticImage( 0.65, 0.3,0.3, 0.3, "img/Night/" .. NightWeatherIcons[WeatherTomorrowNight]  .. ".png", true, tabTomorrow)
+	guiCreateStaticImage( 0.05, 0.3,0.3, 0.3, "weather/img/Day/" .. DayWeatherIcons[WeatherTomorrowDay] .. ".png", true, tabTomorrow)
+	guiCreateStaticImage( 0.65, 0.3,0.3, 0.3, "weather/img/Night/" .. NightWeatherIcons[WeatherTomorrowNight]  .. ".png", true, tabTomorrow)
 	tomorrowdesc = guiCreateLabel(0.05,0.7,0.3,0.2, GetDayWeatherDescription(WeatherTomorrowDay),true,tabTomorrow)		
 	tomorrownightdesc = guiCreateLabel(0.65,0.7,0.3,0.2, GetNightWeatherDescription(WeatherTomorrowNight),true,tabTomorrow)		
 	guiLabelSetHorizontalAlign(tomorrowdesc, "center", true)
@@ -139,8 +139,8 @@ function updateWeatherAdvanced(WeatherOvernight, WeatherToday, WeatherTonight, W
 	dayafternightlabel = guiCreateLabel(0.65,0.1,0.3,0.2,"Night",true,tabDayAfter)		
 	guiLabelSetHorizontalAlign(dayafterlabel, "center", true)
 	guiLabelSetHorizontalAlign(dayafternightlabel, "center", true)
-	guiCreateStaticImage( 0.05, 0.3,0.3, 0.3, "img/Day/" .. DayWeatherIcons[WeatherDayAfterDay] .. ".png", true, tabDayAfter)
-	guiCreateStaticImage( 0.65, 0.3, 0.3, 0.3, "img/Night/" .. NightWeatherIcons[WeatherDayAfterNight]  .. ".png", true, tabDayAfter)
+	guiCreateStaticImage( 0.05, 0.3,0.3, 0.3, "weather/img/Day/" .. DayWeatherIcons[WeatherDayAfterDay] .. ".png", true, tabDayAfter)
+	guiCreateStaticImage( 0.65, 0.3, 0.3, 0.3, "weather/img/Night/" .. NightWeatherIcons[WeatherDayAfterNight]  .. ".png", true, tabDayAfter)
 	dayafterdesc = guiCreateLabel(0.05,0.7,0.3,0.2,GetDayWeatherDescription(WeatherDayAfterDay),true,tabDayAfter)		
 	dayafternightdesc = guiCreateLabel(0.65,0.7,0.3,0.2, GetNightWeatherDescription(WeatherDayAfterNight),true,tabDayAfter)		
 	guiLabelSetHorizontalAlign(dayafterdesc, "center", true)
@@ -149,7 +149,7 @@ function updateWeatherAdvanced(WeatherOvernight, WeatherToday, WeatherTonight, W
 end
 
 function InitialiseWeatherReport()
-	optional = xmlLoadFile("optional.xml")
+	optional = xmlLoadFile("weather/settings.xml")
 	node = xmlFindChild(optional, "setting", 0)
 	enabled = xmlNodeGetAttribute(node, "value")  
 	node = xmlFindChild(optional, "setting", 1)
