@@ -150,9 +150,9 @@ end
 
 function InitialiseWeatherReport()
 	optional = xmlLoadFile("optional.xml")
-	node = xmlFindSubNode(optional, "setting", 0)
+	node = xmlFindChild(optional, "setting", 0)
 	enabled = xmlNodeGetAttribute(node, "value")  
-	node = xmlFindSubNode(optional, "setting", 1)
+	node = xmlFindChild(optional, "setting", 1)
 	keymap = xmlNodeGetAttribute(node, "value")
 	helpTab = call(getResourceFromName("helpmanager"), "addHelpTab", getThisResource(), true)
 	helpMsg = "We are running Churchill's BetterWeather system on this server.  We have no control over the weather."

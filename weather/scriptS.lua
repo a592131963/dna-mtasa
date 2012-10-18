@@ -1,11 +1,11 @@
 --Initialise our weather variables with some random weather
-WeatherOverNight = randInt(0,16)
-WeatherTodayDayTime = randInt(0,16)
-WeatherTodayNightTime = randInt(0,16)
-WeatherTomorrowDayTime = randInt(0,16)
-WeatherTomorrowNightTime = randInt(0,16)
-WeatherDayAfterDayTime = randInt(0,16)
-WeatherDayAfterNightTime = randInt(0,16)
+WeatherOverNight = math.random(0,16)
+WeatherTodayDayTime = math.random(0,16)
+WeatherTodayNightTime = math.random(0,16)
+WeatherTomorrowDayTime = math.random(0,16)
+WeatherTomorrowNightTime = math.random(0,16)
+WeatherDayAfterDayTime = math.random(0,16)
+WeatherDayAfterNightTime = math.random(0,16)
 
 --Set up some weather descriptions for the numbers - trying to make them a bit more descriptive
 DayWeatherDescriptions = {}
@@ -53,9 +53,9 @@ setTime(getTime()) -- stuck this in because I noticed that the client time seems
 WeatherOverNight = WeatherTodayNightTime
 
 	-- Set Today's Daytime weather
-	local rndInt = randInt( 1,100)
+	local rndInt = math.random( 1,100)
 	if (rndInt < 70) then
-		--  Weather is following the reports,  so today’s weather is now as predicted.
+		--  Weather is following the reports,  so todayâ€™s weather is now as predicted.
 		WeatherTodayDayTime = WeatherTomorrowDayTime
 	elseif (rndInt > 69 and rndInt < 90) then
 		-- Weather has moved a bit quicker than expected, Today's weather is now what should have been tonight's weather
@@ -68,7 +68,7 @@ WeatherOverNight = WeatherTodayNightTime
 	--now set today's Evening weather
 	if (WeatherTodayDayTime == WeatherTomorrowDayTime) then
 		--- Weather is still on track, so the odds are that the weather will continue to follow predicted weather pattern
-		rndInt = randInt( 1,100)
+		rndInt = math.random( 1,100)
 		if (rndInt < 70) then
 		--  Weather is following the reports,  so tonight's weather is now as predicted it would be
 			WeatherTodayNightTime = WeatherTomorrowNightTime
@@ -81,65 +81,65 @@ WeatherOverNight = WeatherTodayNightTime
 		end
 	elseif(WeatherTodayDayTime == WeatherTommorowPM) then
 	-- If today's weather is already ahead of the schedule, then we need to adjust the rest of the schedule
-		rndInt = randInt( 1,100)
+		rndInt = math.random( 1,100)
 		if (rndInt < 70) then
 			WeatherTodayNightTime = WeatherDayAfterDayTime
 		elseif (rndInt > 69 and rndInt < 90) then
 			WeatherTodayNightTime = WeatherDayAfterNightTime
 		else
 		-- Weather moved so quickly, today's nighttime weather is now going to be something we didn't predict
-			WeatherTodayNightTime = randInt(0,16)
+			WeatherTodayNightTime = math.random(0,16)
 		end		
 	elseif(WeatherTodayDayTime == WeatherDayAfterDayTime) then
-		rndInt = randInt( 1,100)
+		rndInt = math.random( 1,100)
 		if (rndInt < 70) then
-		--  Weather is following the reports,  so today’s weather is now as predicted.
+		--  Weather is following the reports,  so todayâ€™s weather is now as predicted.
 			WeatherTodayNightTime = WeatherDayAfterNightTime
 		else
-			WeatherTodayNightTime = randInt(0,16)
+			WeatherTodayNightTime = math.random(0,16)
 		end		
 	end
 	
-	-- now set tomorrow’s  weather
+	-- now set tomorrowâ€™s  weather
 	if (WeatherTodayNightTime == WeatherTomorrowNightTime) then
 		-- weather for today didn't change from the predicted weather
 		-- so, there's a high percentage it won't change tomorrow either
-		rndInt = randInt(0,100)
+		rndInt = math.random(0,100)
 		if (rndInt < 70) then
 			-- weather will be as it was predicted yesterday.
 			WeatherTomorrowDayTime = WeatherDayAfterDayTime
-			rndInt = randInt(0,100)
+			rndInt = math.random(0,100)
 			if (rndInt < 70) then
 				WeatherTomorrowNightTime = WeatherDayAfterNightTime
 			else
-				WeatherTomorrowNightTime = randInt(0,16)
+				WeatherTomorrowNightTime = math.random(0,16)
 			end
 
 		elseif (rndInt > 69 and rndInt < 90) then
 			WeatherTomorrowDayTime = WeatherDayAfterNightTime
-			WeatherTomorrowNightTime = randInt(0,16)
+			WeatherTomorrowNightTime = math.random(0,16)
 		else
-			WeatherTomorrowDayTime = randInt(0,16)
-			WeatherTomorrowNightTime = randInt(0,16)
+			WeatherTomorrowDayTime = math.random(0,16)
+			WeatherTomorrowNightTime = math.random(0,16)
 		end
 	elseif(WeatherTodayNightTime == WeatherDayAfterDayTime) then
 		-- weather has changed,..arrived ahead of schedule
-		rndInt = randInt(0,100)
+		rndInt = math.random(0,100)
 		if (rndInt < 70) then
 			WeatherTomorrowDayTime = WeatherDayAfterNightTime
-			WeatherTomorrowNightTime = randInt(0,16)
+			WeatherTomorrowNightTime = math.random(0,16)
 		else
-			WeatherTomorrowDayTime = randInt(0,16)
-			WeatherTomorrowNightTime = randInt(0,16)			
+			WeatherTomorrowDayTime = math.random(0,16)
+			WeatherTomorrowNightTime = math.random(0,16)			
 		end
 	else
-		WeatherTomorrowDayTime = randInt(0,16)
-		WeatherTomorrowNightTime = randInt(0,16)	
+		WeatherTomorrowDayTime = math.random(0,16)
+		WeatherTomorrowNightTime = math.random(0,16)	
 	end
 	
 	-- Finally, pick new random weather for WeatherDayAfterDayTime and WeatherDayAfterNightTime
-	WeatherDayAfterDayTime = randInt(0,16)
-	WeatherDayAfterNightTime = randInt(0,16)
+	WeatherDayAfterDayTime = math.random(0,16)
+	WeatherDayAfterNightTime = math.random(0,16)
 	
 	-- set up a timer to call the daytimeweather event, morning weather updates between 6am and 11am
 	local hour, mins = getTime()
@@ -148,7 +148,7 @@ WeatherOverNight = WeatherTodayNightTime
 		HoursToMorningUpdate = (6-hour)- 1	
 		MinutesToMorningUpdate = (60-mins)		
 		HoursToMorningUpdate = HoursToMorningUpdate * 60
-		HoursToMorningUpdate = (HoursToMorningUpdate + (60 * randInt(0,5))) * 1000 
+		HoursToMorningUpdate = (HoursToMorningUpdate + (60 * math.random(0,5))) * 1000 
 		setTimer(DoDayTimeWeather, HoursToMorningUpdate, 1)
 	elseif (hour > 5 and hour <19) then -- should only get here if resource is started between 5am and 7pm
 		setWeatherBlended(WeatherTodayDayTime)
@@ -156,7 +156,7 @@ WeatherOverNight = WeatherTodayNightTime
 		MinutesToEveningUpdate = (60-mins)		
 		HoursToEveningUpdate = HoursToEveningUpdate * 60
 		HoursToEveningUpdate = HoursToEveningUpdate + MinutesToEveningUpdate
-		HoursToEveningUpdate = (HoursToEveningUpdate + (60 * randInt(0,4))) * 1000 
+		HoursToEveningUpdate = (HoursToEveningUpdate + (60 * math.random(0,4))) * 1000 
 		setTimer(DoEveningWeather, HoursToEveningUpdate, 1)
 	else -- Will only  get in here on the first execution if the resource is started beween 7pm and midnight.
 		setWeatherBlended(WeatherTodayNightTime)
@@ -178,7 +178,7 @@ function DoDayTimeWeather()
 	MinutesToEveningUpdate = (60-mins)		
 	HoursToEveningUpdate = HoursToEveningUpdate * 60
 	HoursToEveningUpdate = HoursToEveningUpdate + MinutesToEveningUpdate
-	HoursToEveningUpdate = (HoursToEveningUpdate + (60 * randInt(0,4))) * 1000 
+	HoursToEveningUpdate = (HoursToEveningUpdate + (60 * math.random(0,4))) * 1000 
 	setTimer(DoEveningWeather, HoursToEveningUpdate, 1)
 end
 
