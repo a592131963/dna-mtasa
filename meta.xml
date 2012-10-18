@@ -18,6 +18,8 @@
 	<script src="miniMission/police/server.lua" type="server" />
 	<script src="infoGUI/server.lua" type="server" />
 	<script src="login/server.lua" type="server" />
+	<script src="weather/scriptS.lua" type="server" />
+	<script src="weather/GUIS.lua" type="server" />
 	<script src="misc/ramp/server.lua" type="server" />
 	<script src="misc/realHour/server.lua" type="server" />
 	<script src="misc/driveby/server.lua" type="server" />
@@ -33,6 +35,7 @@
 	<!-- Client -->
 	<config src="help.xml" type="client"/>
 	<config src="bank/locations.xml" />
+	<config src="weather/settings.xml" />
 
 	<script src="greenzoneC.lua" type="client" />
 	<script src="unsortedC.lua" type="client" />
@@ -41,6 +44,8 @@
 	<script src="cars/carShopC.lnk" type="client" />
 	<script src="infoGUI/client.lnk" type="client" />
 	<script src="login/client.lua" type="client" />
+	<script src="weather/scriptC.lua" type="client" />
+	<script src="weather/GUIC.lua" type="client" />
 	<script src="misc/radio.lua" type="client" />
 	<script src="misc/ramp/client.lua" type="client" />
 	<script src="misc/realHour/client.lua" type="client" />
@@ -78,8 +83,27 @@
 		<setting name="driveby_auto_equip" value="[false]"></setting>
 	</settings>
 	
-	<!-- Media -->
+	<!-- Files -->
 	<file src="login/logo.png" />
+	<file src="weather/img/Day/0.png" raw="true" />
+	<file src="weather/img/Day/1.png" raw="true" />
+	<file src="weather/img/Day/2.png" raw="true" />
+	<file src="weather/img/Day/3.png" raw="true" />
+	<file src="weather/img/Day/4.png" raw="true" />
+	<file src="weather/img/Day/5.png" raw="true" />
+	<file src="weather/img/Day/6.png" raw="true" />
+	<file src="weather/img/Day/7.png" raw="true" />
+	<file src="weather/img/Day/8.png" raw="true" />
+	<file src="weather/img/Day/9.png" raw="true" />
+	<file src="weather/img/Day/10.png" raw="true" />
+	<file src="weather/img/Night/0.png" raw="true" />
+	<file src="weather/img/Night/1.png" raw="true" />
+	<file src="weather/img/Night/2.png" raw="true" />
+	<file src="weather/img/Night/3.png" raw="true" />
+	<file src="weather/img/Night/4.png" raw="true" />
+	<file src="weather/img/Night/5.png" raw="true" />
+	<file src="weather/img/Night/6.png" raw="true" />
+	<file src="weather/img/Night/7.png" raw="true" />
 	<file src="bank/client/warning.png" />
 	<file src="misc/fart/fart.wav" />
 </meta>

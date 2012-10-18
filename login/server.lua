@@ -62,6 +62,8 @@ function autologinPlayer(username,password)
 		if not (account == false) then
 			logIn (source, account, password)
 			outputChatBox("#0000FF* #FFFFFFYou have been automatically logged in.",source,255,255,255,true)
+	
+
 			setTimer(outputChatBox,1000,1,"#0000FF* #FFFFFFTo disable auto-login, use #ABCDEF/disableauto.",source,255,255,255,true)
 			triggerClientEvent ( source, "hideLoginWindow", getRootElement())
 		else

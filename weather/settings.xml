@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<setting name="WeatherReportsEnabled" value="true" />
+	<setting name="WeatherReportKeyMapping" value="F5" />
+</settings>
