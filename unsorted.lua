@@ -140,8 +140,8 @@ end
 --	end
 --end)
 
-function kickHaxingNoob (player, weapon)
-	takeWeapon (player, weapon)
-	outputChatBox ( getPlayerName (player) .. " USES HAAAAAX!", getRootElement(), 255, 0, 0, false)
-	kickPlayer (player, "HAAAAAAAAX!")	
-end 
+-- function kickHaxingNoob (player, weapon)
+-- 	takeWeapon (player, weapon)
+-- 	outputChatBox ( getPlayerName (player) .. " USES HAAAAAX!", getRootElement(), 255, 0, 0, false)
+-- 	kickPlayer (player, "HAAAAAAAAX!")	
+-- end 
