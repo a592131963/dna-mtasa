@@ -1,10 +1,10 @@
 
 --[[
 
-    Resource:   bank (written by 50p)
-    Version:    2.2
-    
-    Filename:   bank.funcs.lua
+	Resource:   bank (written by 50p)
+	Version:	2.2
+	
+	Filename:   bank.funcs.lua
 
 ]]
 
@@ -16,23 +16,21 @@ function Account:new( username, balance, create_db )
 	local account = { name = username, balance = balance or 0 }
 	setmetatable( account, self )
 	self.__index = self
-    if create_db == 1 or create_db == true then
-        --executeSQLInsert( bankSQLInfo.tab, "\"".. username .."\", 0" )
-        local acc = getAccount( username );
-        if acc then
-        	setAccountData( acc, "bank.balance", balance );
-        end
-    end
+	if create_db == 1 or create_db == true then
+		local acc = getAccount( username );
+		if acc then
+			setAccountData( acc, "bank.balance", balance );
+		end
+	end
 	return account
 end
 
 function Account:open( username, balance )
-    --local acc = executeSQLSelect( bankSQLInfo.tab, bankSQLInfo.username..", ".. bankSQLInfo.balance, bankSQLInfo.username.." = \"".. username.."\"", 1 )
-    local acc = getAccount( username );
-    if acc then 
-        return Account:new( username, tonumber( balance ) )
-    end
-    return false
+	local acc = getAccount( username );
+	if acc then 
+		return Account:new( username, tonumber( balance ) )
+	end
+	return false
 end
 
 function Account:deposit( amount )
@@ -67,13 +65,13 @@ function Account:balance()
 end
 
 function Account:accountname()
-    return self.name
+	return self.name
 end
 
 function Account:setAccountName( newname )
-    if newname then
-        self.name = newname
-        return
-    end
+	if newname then
+		self.name = newname
+		return
+	end
 end
 

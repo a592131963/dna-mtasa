@@ -8,7 +8,6 @@
 ]]
 
 addEvent( "bank_giveMeATMs", true )
-
 addEventHandler( "bank_giveMeATMs", resourceRoot,
 	function( )
 		local atms = { }

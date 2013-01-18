@@ -1,10 +1,10 @@
 
 --[[
 
-    Resource:   bank (written by 50p)
-    Version:    2.3
-    
-    Filename:   bank.gui.client.lua
+	Resource:   bank (written by 50p)
+	Version:	2.3
+	
+	Filename:   bank.gui.client.lua
 
 ]]
 
@@ -67,7 +67,7 @@ addEventHandler( "onClientResourceStart", g_this_root,
 				guiSetProperty( depositTab.button, "HoverTextColour", "FF00FF00" )
 				guiSetProperty( depositTab.depositall_button, "HoverTextColour", "FF00FF00" )
 			addEventHandler( "onClientGUIClick", depositTab.button, performBankAction )
-            addEventHandler( "onClientGUIClick", depositTab.depositall_button, depositAll )
+			addEventHandler( "onClientGUIClick", depositTab.depositall_button, depositAll )
 			
 			transferTab = { }
 			transferTab.tab = guiCreateTab( "Transfer", tabPanel )
@@ -87,7 +87,7 @@ addEventHandler( "onClientResourceStart", g_this_root,
 				guiSetProperty( transferTab.button, "HoverTextColour", "FF00FFDD" )
 				guiSetProperty( transferTab.transferall_button, "HoverTextColour", "FF00FFDD" )
 			addEventHandler( "onClientGUIClick", transferTab.button, performBankAction )
-            addEventHandler( "onClientGUIClick", transferTab.transferall_button, transferAll )
+			addEventHandler( "onClientGUIClick", transferTab.transferall_button, transferAll )
 			
 			tempLbl = guiCreateLabel( .06, .89, .5, .1, "version: "..version, true, bankWnd )
 				guiSetFont( tempLbl, "default-bold-small" )
@@ -97,12 +97,12 @@ addEventHandler( "onClientResourceStart", g_this_root,
 				guiSetFont( quit_btn, "default-bold-small" )
 			addEventHandler( "onClientGUIClick", quit_btn, 
 				function()
-                    if source == quit_btn then
-                        guiSetVisible( bankWnd, false )
-                        guiSetVisible( warningBox, false )
-                        showCursor( false )
-                        guiSetInputEnabled( false )
-                    end
+					if source == quit_btn then
+						guiSetVisible( bankWnd, false )
+						guiSetVisible( warningBox, false )
+						showCursor( false )
+						guiSetInputEnabled( false )
+					end
 				end
 			)
 			
@@ -118,7 +118,6 @@ function showWarningMessage( message )
 		warningBox = guiCreateWindow( x*.5-150, y*.5-65, 300, 120, "warning", false )
 			guiWindowSetSizable( warningBox, false )
 		warningImage = guiCreateStaticImage( 10, 30, 60, 60, ":bank/client/warning.png", false, warningBox )
-		--outputChatBox( tostring( warningImage ) );
 		warningMessage = guiCreateLabel( 100, 40, 180, 60, "", false, warningBox )
 		warningOk = guiCreateButton( 130, 90, 70, 20, "Ok", false, warningBox )
 		addEventHandler( "onClientGUIClick", warningOk, function() guiSetVisible( warningBox, false ) end )
@@ -138,8 +137,8 @@ function performBankAction( )
 		amount = tonumber( guiGetText( withdrawTab.amount ) )
 		if amount == nil then
 			showWarningMessage( "You must type the amount\nyou want to withdraw!" )
-        elseif amount < 0 then
-            showWarningMessage( "You can't enter negative values!" )
+		elseif amount < 0 then
+			showWarningMessage( "You can't enter negative values!" )
 		else
 			triggerServerEvent( "bank_withdrawMoney", g_localPlayer, g_localPlayer, amount )
 		end
@@ -147,8 +146,8 @@ function performBankAction( )
 		amount = tonumber( guiGetText( depositTab.amount ) )
 		if amount == nil then
 			showWarningMessage( "You must type the amount\nyou want to deposit!" )
-        elseif amount < 0 then
-            showWarningMessage( "You can't enter negative values!" )
+		elseif amount < 0 then
+			showWarningMessage( "You can't enter negative values!" )
 		else
 			triggerServerEvent( "bank_depositMoney", g_localPlayer, g_localPlayer, amount )
 		end
@@ -159,8 +158,8 @@ function performBankAction( )
 			showWarningMessage( "You must type the name of\nplayer you want to transfer\nmoney to!" )
 		elseif amount == nil then 
 			showWarningMessage( "You must type the amount\nyou want to transfer!" )
-        elseif amount < 0 then
-            showWarningMessage( "You can't enter negative values!" )
+		elseif amount < 0 then
+			showWarningMessage( "You can't enter negative values!" )
 		else
 			local money_receiver = getPlayerFromNick( to_who )
 			if money_receiver == g_localPlayer then
@@ -177,7 +176,7 @@ end
 function show_MyBankAccountWnd( name, money, bankname, bank, atm )
 	showCursor( true )
 	guiSetText( clientname_lbl, name )
-    guiSetText( bankWnd, bankname )
+	guiSetText( bankWnd, bankname )
 	guiSetText( clientbalance_lbl, "$ " .. tostring( money ) )
 	guiSetVisible( bankWnd, true )
 	guiBringToFront( bankWnd );
@@ -208,33 +207,33 @@ addEvent( "bank_updateMyBalance", true )
 addEventHandler( "bank_updateMyBalance", g_localPlayer, updateMyBalance )
 
 function withdrawAll()
-    if source == withdrawTab.withdrawall_button then
-        triggerServerEvent( "bank_withdrawMoney", g_localPlayer, g_localPlayer, 'all' )
-    end
+	if source == withdrawTab.withdrawall_button then
+		triggerServerEvent( "bank_withdrawMoney", g_localPlayer, g_localPlayer, 'all' )
+	end
 end
 
 function depositAll()
-    if source == depositTab.depositall_button then
-        triggerServerEvent( "bank_depositMoney", g_localPlayer, g_localPlayer, 'all' )
-    end
+	if source == depositTab.depositall_button then
+		triggerServerEvent( "bank_depositMoney", g_localPlayer, g_localPlayer, 'all' )
+	end
 end
 
 function transferAll()
-    if source == transferTab.transferall_button then
-    	local to_who = guiGetText( transferTab.to )
-    	local amount = tonumber( guiGetText( transferTab.amount ) )
-    	if to_who == nil or to_who == false or to_who == "" then
-    		showWarningMessage( "You must type the name of\nplayer you want to transfer\nmoney to!" )
-    	else
-    		local money_receiver = getPlayerFromNick( to_who )
-    		if money_receiver == g_localPlayer then
-    			showWarningMessage( "You can not transfer money\nto youself!" )
-    		elseif money_receiver ~= g_localPlayer then
-    			triggerServerEvent( "bank_transferMoney", g_localPlayer, g_localPlayer, money_receiver, 'all' )
-    		else
-    			showWarningMessage( "Player \"".. to_who .."\"\nis not connected!" )
-    		end
-        end
-    end
+	if source == transferTab.transferall_button then
+		local to_who = guiGetText( transferTab.to )
+		local amount = tonumber( guiGetText( transferTab.amount ) )
+		if to_who == nil or to_who == false or to_who == "" then
+			showWarningMessage( "You must type the name of\nplayer you want to transfer\nmoney to!" )
+		else
+			local money_receiver = getPlayerFromNick( to_who )
+			if money_receiver == g_localPlayer then
+				showWarningMessage( "You can not transfer money\nto youself!" )
+			elseif money_receiver ~= g_localPlayer then
+				triggerServerEvent( "bank_transferMoney", g_localPlayer, g_localPlayer, money_receiver, 'all' )
+			else
+				showWarningMessage( "Player \"".. to_who .."\"\nis not connected!" )
+			end
+		end
+	end
 end
 

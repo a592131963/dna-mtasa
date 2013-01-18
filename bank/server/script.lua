@@ -71,12 +71,7 @@ function bank_saveAllPlayersMoney()
 end
 
 function bank_playerJoined()
-	--outputChatBox( "This server runs Bank System (v1.5). Type /bs", source, 255, 255, 0 )
 	playersAccount[ source ] = Account:new( getPlayerName( source ), 0 )
-	--setTimer( spawnPlayer, 1000, 1, source, 2420.7126, 1124.0426, 10.8203 )
-    --setTimer( setPlayerRotation, 1100, 1, source, 90 )
-	--fadeCamera( source, true )
-end
 addEventHandler( "onPlayerJoin", root, bank_playerJoined )
 
 function bank_playerQuit()
